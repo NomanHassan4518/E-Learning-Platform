@@ -2,7 +2,7 @@ import React from "react";
 import {  useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-const HeroSection = () => {
+const HeroSection = ({content}) => {
   const location = useLocation();
   const path = location.pathname;
 

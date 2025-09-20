@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const logout = () => {
-    setAuth(null); // This will update state + remove from localStorage
+    setAuth(null);
     navigate("/login");
   };
 

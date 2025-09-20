@@ -1,9 +1,9 @@
 import React from 'react'
 import HeroSection from '../Components/HeroSection'
-import { courses } from '../data/courseContent'
 import CourseCard from '../Components/CourseCard'
 
 const Courses = () => {
+  const courses = JSON.parse(localStorage.getItem("courses"))
   return (
     <div>
       <HeroSection/>
