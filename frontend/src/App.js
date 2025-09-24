@@ -15,8 +15,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import CourseQuizes from "./Pages/CourseQuizes";
 import QuizPage from "./Pages/QuizPage";
+import ScrollToTop from "./Components/ScrollToTop";
 
-// Wrapper to conditionally show loader
 const LoaderWrapper = () => {
   const { loading } = useLoading();
   return loading ? <Loader /> : null;
@@ -52,11 +52,10 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseQuizes />} />
-        <Route path="/courses/:courseId/:quizId" element={<QuizPage />} />
-        <Route path="/results" element={<Result />} />
+        <Route path="/courses/:course_id/:quiz_id" element={<QuizPage />} />
+        <Route path="/results/:user_id" element={<Result />} />
       </Routes>
       <Footer />
-      {/* Loader on top of everything */}
       <LoaderWrapper />
     </>
   );
@@ -67,6 +66,7 @@ function App() {
     <LoadingProvider>
       <AuthProvider>
         <BrowserRouter>
+        <ScrollToTop/>
           <AppContent />
         </BrowserRouter>
       </AuthProvider>

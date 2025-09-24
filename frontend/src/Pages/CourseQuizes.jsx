@@ -1,4 +1,3 @@
-// src/Pages/CourseQuizes.jsx
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -38,14 +37,13 @@ const CourseQuizes = () => {
   if (!course) {
     return <h2 className="text-center text-red-500 mt-10">Course not found</h2>;
   }
-
+ 
   const handleNaviagte = (quiz)=>{
  naviagte(`/courses/${course._id}/${quiz._id}`)
   }
 
   return (
     <div>
-      {/* ✅ Hero Section */}
       <div
         className="relative w-full h-[35rem] bg-cover bg-center flex items-center justify-center"
         style={{
@@ -63,7 +61,6 @@ const CourseQuizes = () => {
         </div>
       </div>
 
-      {/* ✅ Quizzes */}
       <div className="p-10 bg-gray-50">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-semibold">
@@ -79,12 +76,10 @@ const CourseQuizes = () => {
   key={quiz?._id}
   className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition transform duration-300 cursor-pointer"
 >
-  {/* Header */}
   <div className="bg-[#e03b11] text-white text-center py-4">
     <h1 className="font-semibold">{quiz?.title}</h1>
   </div>
 
-  {/* Body */}
   <div className="p-4 flex justify-between items-center">
     <p className="text-sm text-gray-600">Quiz No: <span className="font-semibold">{quiz.quizNo}</span></p>
     <button onClick={()=>handleNaviagte(quiz)} className="px-3 py-1 text-xs font-medium bg-black text-white rounded-full shadow">

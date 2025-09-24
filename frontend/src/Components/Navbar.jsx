@@ -6,6 +6,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { auth, setAuth } = useAuth();
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"))
 
   const logout = () => {
     setAuth(null);
@@ -40,7 +41,7 @@ const Navbar = () => {
           <Link to="/courses" className="hover:text-[#e03b11]">
             Courses
           </Link>
-          <Link to="/results" className="hover:text-[#e03b11]">
+          <Link to={`/results/${user.id}`} className="hover:text-[#e03b11]">
             Results
           </Link>
         </div>

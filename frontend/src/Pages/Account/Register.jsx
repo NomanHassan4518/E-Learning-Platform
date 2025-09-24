@@ -11,7 +11,6 @@ const Register = () => {
   const { setLoading } = useLoading();
   const { setAuth } = useAuth();
 
-  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
